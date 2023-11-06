@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-LABEL de.mindrunner.android-docker.flavour="alpine-standalone"
-
 # Revert to 2.34 because of 2.35 issue : https://github.com/sgerrand/alpine-pkg-glibc/issues/176
 ARG GLIBC_VERSION="2.34-r0"
 
@@ -20,12 +18,11 @@ RUN apk -U update && apk -U add \
   expect \
   fontconfig \
   git \
-  make \
+  openssh-client \
   libstdc++ \
   libgcc \
-  mesa-dev \
+  jq \
   openjdk17 \
-  pulseaudio-dev \
   su-exec \
   ncurses \
   unzip \
